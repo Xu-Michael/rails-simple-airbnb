@@ -1,0 +1,21 @@
+<h2>All our Flats (<%= @flats.count %>)</h2>
+<div class="container">
+  <div class="row">
+    <% @flats.each do |flat| %>
+    <div class="col-xs-12 col-md-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card-category"><%= flat.address %></div>
+        <div class="card-description">
+          <h2><%= flat.name %></h2>
+          <p><%= flat.description %></p>
+        </div>
+        <div class="card-stats">
+          <i class="material-icons" style="margin-right: 5px">group</i><p><%= flat.number_of_guests %></p>
+          <i class="material-icons">attach_money</i><p><%= flat.price_per_night %></p>
+        </div>
+        <%= link_to '', flat_path(flat), class: 'card-link' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
